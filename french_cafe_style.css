@@ -1,0 +1,213 @@
+
+#wrapper{
+  margin: auto;    /*center page*/
+  width: 80%;      /*width of the page*/
+  background-color:#f7f7ed;  /*background of all div(wrapper)*/
+}
+
+body{
+  color: #000000;    /*color of all page text*/
+  background-color:#764852;  /*body background color*/
+  font-family: Verdana, Arial, sans-serif;  /*text font*/
+  font-size: 0.9em; /*font size of the text*/
+  margin: 5px 0px 20px 0px;  /* body margin*/
+  padding: 0;    /*padding shorthand property with one value*/
+}
+
+header{
+  text-align: center;  /*header text aligned (center)*/
+  overflow: auto;  /*The overflow property forces the header div to stretch to fit the content inside it*/
+  margin: 5px 5px 5px 5px;  /*header margin*/
+}
+
+#banner{
+  background-repeat:no-repeat;   /*The background-image is not repeated.*/
+  background-image: url(banner.jpeg);   /*banner image*/
+  background-size: 100% 100%;   /*image size*/
+  height: 150px;    /*image height*/
+  margin-top: 5px;   /*applying some margin space on the top of the image.*/
+}
+
+h1{      /* sitename div */
+  border-bottom: 5px solid #764852;  /*bottom border*/
+  padding: 10px 0px 10px 0px;   /*padding (10px) top and bottom */ 
+  margin: 0px 0px 10px 0px;   /*margin (10px) bottom */ 
+}
+
+#navigationLinks {   /*style of navegation links column on the left*/
+  float: left; /*The navigationLinks floats to the left of its container*/
+  width: 20%;    /*navigationLinks width*/
+  font-weight: bold;   /* weight of the navigationLinks text font */
+  margin: 0px 0px 0px 10px;    /* navigationLinks margin*/
+}
+
+
+#testimonials {   /*style of testimonials column on the right*/
+  float: right;   /*The testimonials floats to the right of its container*/
+  width: 30%;     /* testimonials width */
+  margin: 0px 10px 0px 0px; /* testimonials margin */
+  padding: 0;     /*padding shorthand property with one value*/
+  word-break: normal;   /* Default value. Uses default line break rules */
+}
+
+#navigationLinks ul {       /*style of ul on navigationLinks column on the left*/
+  list-style-type: none;  /*remove the bullets*/
+  margin: 0;  /*margin shorthand property with one value*/
+  padding: 0;   /*padding shorthand property with one value*/
+}
+
+#ul a, #altnav a {
+  text-decoration: none; /*remove underlines from links*/
+}
+
+#ul a {
+  padding: 20px;  /*padding shorthand property with one value*/
+  display: block;  /* display in block*/
+  background-color:#d3d3d3; /*background color*/
+  border-bottom: 1px solid #ffffff;  /*border on the botton*/
+  color: #764852;
+}
+
+#ul a:link { /* pseudo-classes - color of navegation links on the left*/
+  color: #764852;
+}
+
+#ul a:visited { /* pseudo-classes - color of navegation links on the left when the link is visited*/
+  color: #000000;
+}
+
+#ul a:hover { /* pseudo-classes - color of navegation links on the left when hoved*/
+  color: #ffffff;
+  background-color: #764852; /*background color*/
+}
+
+#content{      /*content style*/
+  padding: 0px 20px 0px 20px; 
+  overflow:auto;
+  margin-left: 15%;   
+  margin-right: 15%;   
+}
+
+h2 {
+  margin-top: 0px; /* took out the top margin from h2 to align its text with the column on the left.*/
+}
+
+#footer {   /*fotter style*/
+  /*When an element has the clear property assigned, 
+  if it comes into contact with a float it is placed right below where that float ends.*/
+  clear: both;
+  font-family: Tahoma, Arial, Helvetica, Sans-serif;
+  font-size: 10px;
+  border-top: 5px solid #764852;
+  padding: 10px 10px 10px 10px;
+  margin: 5px 5px 5px 5px;
+}
+
+#altnav {   /*alternative navigation Links column style*/
+  width: 30%;
+  float: right;
+  text-align: right;
+}
+
+#altnav a:link {   /* pseudo-classes - color of altnav links*/
+  color: black;
+}
+
+#altnav a:hover {  /* pseudo-classes -  color of altnav when hoved*/
+  color: #764852;
+}
+
+/* rules for screen width 1024px 
+   page adapted for tablet 
+*/
+@media only screen and (max-width:1024px) {
+  #header {  /*set new margin and height for the header div*/
+    height: 80%;
+    margin: 5px 5px 0px 5px;
+  }
+
+  body{   /*collpase all margins in the body of the page*/
+    margin: 0;
+    font-size: 0.8em; /*font size of the body text*/
+  }
+
+  #wrapper{width: auto;}  /*wrapper will fill the width of the browser window*/
+
+  /*the navigationLinks no longer floats on the left and
+  fills the width of the browser window*/
+  #navigationLinks {
+    float:none;
+    width: auto;
+    border-bottom: 5px solid #764852;
+    margin: 0px 5px 20px 5px;
+    padding-bottom: 10px;
+  }
+
+  #navigationLinks li {    /*list items are blocks and the blocks are in line*/
+    display:inline-block;
+    padding: 0.5em;
+  }
+
+  #navigationLinks ul {text-align: center;}   /*the ul of navigationLinks is centred*/
+
+  /*removes the left margin from the content div since navigationLinks 
+  no longer floating on left*/
+  #content{
+    margin-left: 0;
+    text-align: justify;  /*justify content text*/
+  }
+
+  #testimonials {text-align: justify;}  /*justify testimonials text*/
+
+  h1, h2{font-size: 110%;}   /*headings font size (smaller)*/
+}
+
+/* styles for a mobile device 768px*/
+@media only screen and (max-width:768px){
+  #header{
+    padding: 10px 0 0 0;
+    height: 40%;
+  }
+
+  /*heading 1 is smaller and no margins*/
+  h1{font-size: 90%; margin: 0;}
+
+  /*heading 2 is smaller*/
+  h2{font-size: 80%;}
+
+  #navigationLinks ul { /*text aligned on the left*/
+    text-align: left;
+  }
+
+  #ul a {padding: 10px; margin-top: 10px;}
+
+  #testimonials {display: none;}  /*don't display testimonials*/
+
+  /*removes the right margin from the content div since testimonials 
+  no longer floating on right*/
+  #content{margin-right: 0;}
+
+  #altnav {display: none;}  /*don't display altnav*/
+}
+
+/* styles for a mobile device 486px */
+@media only screen and (max-width:486px){
+  #banner {display: none;}   /*don't display banner*/
+
+  /*display in block and remove all padding from navigationLinks div*/
+  #navigationLinks, #navigationLinks li {
+    padding: 0;
+    display: block;
+  }
+
+  #navigationLinks a { /*navigationLinks smaller and with bottom border*/
+    margin: 0;
+    padding: 0.5em 0;
+    border-bottom: 2px solid #00005d;
+  }
+
+  #navigationLinks ul {  /*text aligned on the center*/
+    text-align: center;
+  }
+}
+
